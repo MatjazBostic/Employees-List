@@ -1,4 +1,4 @@
-package com.example.employeeslist;
+package com.mbostic.employeeslist;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +58,7 @@ public class PublicProfileActivity extends AppCompatActivity {
                             break;
                         }
                         String temp = link.attr("href");
+                        // if link text length is less than 10, the link is usually not what we are looking for
                         if(temp.startsWith("/url?q=") && link.text().length() > 10){
                             String result = link.text();
                             Log.d("result", result);

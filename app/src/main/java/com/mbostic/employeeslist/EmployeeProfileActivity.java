@@ -1,4 +1,4 @@
-package com.example.employeeslist;
+package com.mbostic.employeeslist;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,11 +11,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import java.util.Locale;
 
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_BIRTH_DATE;
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_GENDER;
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_NAME;
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_SALARY;
-import static com.example.employeeslist.DBHelper.GENDER_MALE;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_BIRTH_DATE;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_GENDER;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_NAME;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_SALARY;
+import static com.mbostic.employeeslist.DBHelper.GENDER_MALE;
 
 /**
  * Shows the selected employee's information.

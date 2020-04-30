@@ -1,4 +1,4 @@
-package com.example.employeeslist;
+package com.mbostic.employeeslist;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -17,10 +17,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_BIRTH_DATE;
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_GENDER;
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_SALARY;
-import static com.example.employeeslist.DBHelper.GENDER_MALE;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_BIRTH_DATE;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_GENDER;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_SALARY;
+import static com.mbostic.employeeslist.DBHelper.GENDER_MALE;
 
 /**
  * Activity which displays analytics of all employees.
@@ -28,7 +28,7 @@ import static com.example.employeeslist.DBHelper.GENDER_MALE;
 public class AnalyticsActivity extends AppCompatActivity {
 
     /**
-     * Calculates the median and average age of the users, max salary and male to female employee ration
+     * Calculates the median and average age of the users, max salary and male to female employee ratio
      * It puts the calculated information into the appropriate views.
      * @param savedInstanceState
      */

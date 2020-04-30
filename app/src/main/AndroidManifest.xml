@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.employeeslist">
+    package="com.mbostic.employeeslist">
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.mbostic.employeeslist.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,17 +21,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddEmployeeActivity"
+            android:name="com.mbostic.employeeslist.AddEmployeeActivity"
             android:label="@string/add_employee"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".EmployeeProfileActivity"
+            android:name="com.mbostic.employeeslist.EmployeeProfileActivity"
             android:label="@string/employee_profile"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".AnalyticsActivity"
+        <activity android:name="com.mbostic.employeeslist.AnalyticsActivity"
             android:label="@string/analytics"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".PublicProfileActivity"
+        <activity android:name="com.mbostic.employeeslist.PublicProfileActivity"
             android:label="@string/public_profile"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

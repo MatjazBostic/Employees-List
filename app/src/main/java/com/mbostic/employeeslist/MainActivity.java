@@ -1,4 +1,4 @@
-package com.example.employeeslist;
+package com.mbostic.employeeslist;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.widget.AdapterView.*;
-import static com.example.employeeslist.DBHelper.EMPLOYEES_COLUMN_NAME;
+import static com.mbostic.employeeslist.DBHelper.EMPLOYEES_COLUMN_NAME;
 
 /**
  * This activity shows a list of employee names. When the user clicks on an employee,

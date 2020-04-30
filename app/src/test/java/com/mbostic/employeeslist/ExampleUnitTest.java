@@ -1,4 +1,4 @@
-package com.example.employeeslist;
+package com.mbostic.employeeslist;
 
 import org.junit.Test;
 
