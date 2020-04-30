@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Employees List</string>
+    <string name="add_employee">Add Employee</string>
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="birthday_date">Birth date</string>
+    <string name="salary">Salary</string>
+    <string name="currency">€</string>
+    <string name="invalid_salary_format_msg">Invalid salary format. It should be a real number.</string>
+    <string name="employee_profile">Employee Profile</string>
+    <string name="id">Id</string>
+    <string name="name_empty_msg">Name must not be empty.</string>
+    <string name="analytics">Analytics</string>
+    <string name="average_age">Average age</string>
+    <string name="median_age">Median age</string>
+    <string name="max_salary">Max salary</string>
+    <string name="male_vs_female_ratio">Male vs female workers ratio</string>
+    <string name="public_profile">Public profile</string>
+    <string name="results_fetch_error">Error occurred while fetching results.</string>
+    <string name="first_5_google_search_results">First 5 Google search results</string>
+</resources>
