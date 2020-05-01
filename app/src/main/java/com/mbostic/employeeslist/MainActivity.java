@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Opens an activity for viewing details of the selected employee
                 Intent i = new Intent(MainActivity.this, EmployeeProfileActivity.class);
-                // Employee Id equals employee's position in the list + 1 (positions starts with 0 and employee's Ids start with 1)
+                // Employee Id equals employee's position in the list + 1 (positions starts with 0 and employees' Ids start with 1)
+                // This is assuming that deletion of employees is not possible
                 i.putExtra("employeeId", position+1);
                 startActivity(i);
             }

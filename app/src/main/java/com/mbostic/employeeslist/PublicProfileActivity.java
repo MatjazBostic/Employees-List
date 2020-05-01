@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class PublicProfileActivity extends AppCompatActivity {
     /**
-     * Displays the name of the employee, then fetches the first 5 links from google.com and displays them
+     * Displays the name of the employee in a TextView, then fetches the first 5 links from google.com and displays them
      * @param savedInstanceState
      */
     @Override
