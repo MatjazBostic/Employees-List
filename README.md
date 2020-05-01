@@ -18,7 +18,7 @@ There is a list of employees shown in home screen
 When user clicks on an employee, employee's details are shown in new activity
 
 ### Calculating analytics of employees
-Median and average age of the users, max salary and male to female employee ratio are calculated and shown in Analytics activity
+Median and average age, max salary and male to female ratio of all employees are calculated and shown in Analytics activity
 
 ### Public profile
 First 5 headers of Google search results of employee name are shown in Public profile activity
