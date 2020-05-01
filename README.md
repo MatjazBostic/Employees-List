@@ -35,6 +35,3 @@ First 5 headers of Google search results of employee name are shown in Public pr
 #### Signed apk
  - In Android studio go to Build -> "Generate signed bundle / APK" -> Follow the instructions
  
-## Issues
-### Google search of employees is not optimal.
-Sometimes, irrelevant headers are displayed in Public profile activity. Can't figure out why. Mostly, it works fine.
