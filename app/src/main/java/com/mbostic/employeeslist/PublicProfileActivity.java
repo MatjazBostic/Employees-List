@@ -1,21 +1,22 @@
 package com.mbostic.employeeslist;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,38 +42,48 @@ public class PublicProfileActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                List<String> results = new ArrayList<>();
+                String jsonStr;
                 try {
-                    Document doc = Jsoup
-                            .connect("https://www.google.com/search?q=" + name + "&num=7")
-                            .userAgent(
-                                    "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)")
-                            .timeout(5000).get();
+                    String key = "AIzaSyBCztYXhEDpOrnG_DpV_1rM9WG4CZDeFck";
+                    URL url = new URL(
+                            "https://www.googleapis.com/customsearch/v1?key=" + key + "&cx=013036536707430787589:_pqjad5hr1a&q=" + name + "&alt=json");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setRequestProperty("Accept", "application/json");
+                    BufferedReader br = new BufferedReader(new InputStreamReader(
+                            (conn.getInputStream())));
 
-                    // get all links
-                    Elements links = doc.select("a[href]");
-                    int count = 0;
-                    for (Element link : links) {
-                        // show 5 links and no more
-                        if(count == 5){
+                    String line;
+                    System.out.println("Output from Server .... \n");
+
+                    StringBuilder sb = new StringBuilder();
+                    while ((line = br.readLine()) != null) {
+                        sb.append(line);
+                    }
+                    jsonStr = sb.toString();
+                    conn.disconnect();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return;
+                }
+
+                List<String> results = new ArrayList<>();
+
+                try {
+                    JSONObject json = new JSONObject(jsonStr);
+
+                    JSONArray arr = json.getJSONArray("items");
+                    for (int i = 0; i < arr.length(); i++)
+                    {
+                        String title = arr.getJSONObject(i).getString("title");
+                        results.add(title);
+                        if(results.size() == 5){
                             break;
-                        }
-                        String temp = link.attr("href");
-                        // if link text length is less than 10, the link is usually not what we are looking for
-                        if(temp.startsWith("/url?q=") && link.text().length() > 10){
-                            String result = link.text();
-                            Log.d("result", result);
-                            if(result.contains("http")){
-                                result = result.substring(0, result.indexOf("http"));
-                            }
-                            results.add(result);
-                            count++;
                         }
                     }
 
-                } catch (IOException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(PublicProfileActivity.this, R.string.results_fetch_error, Toast.LENGTH_LONG).show();
                 }
 
                 final ListView resultsLV = findViewById(R.id.resultsLV);
