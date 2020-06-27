@@ -1,6 +1,6 @@
 # Employees-List
 
-Simple application for managing employees contacts.
+Simple Android application for managing employees contacts.
 
 ## Features
 ### Displaying and saving of employees details
